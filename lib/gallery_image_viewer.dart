@@ -35,6 +35,7 @@ Future<Dialog?> showImageViewer(
     BuildContext context, ImageProvider imageProvider,
     {bool immersive = true,
     void Function()? onViewerDismissed,
+    Widget? customButton,
     bool useSafeArea = false,
     bool swipeDismissible = false,
     Color backgroundColor = _defaultBackgroundColor,
@@ -48,7 +49,7 @@ Future<Dialog?> showImageViewer(
       swipeDismissible: swipeDismissible,
       backgroundColor: backgroundColor,
       closeButtonTooltip: closeButtonTooltip,
-      closeButtonColor: closeButtonColor);
+      closeButtonColor: closeButtonColor, customButton: customButton);
 }
 
 /// Shows the images provided by the [imageProvider] in a full-screen PageView [Dialog].
@@ -72,7 +73,7 @@ Future<Dialog?> showImageViewerPager(
     bool swipeDismissible = false,
     Color backgroundColor = _defaultBackgroundColor,
     String closeButtonTooltip = _defaultCloseButtonTooltip,
-    Color closeButtonColor = _defaultCloseButtonColor}) {
+    Color closeButtonColor = _defaultCloseButtonColor, Widget? customButton,}) {
   if (immersive) {
     // Hide top and bottom bars
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
@@ -90,6 +91,6 @@ Future<Dialog?> showImageViewerPager(
             swipeDismissible: swipeDismissible,
             backgroundColor: backgroundColor,
             closeButtonColor: closeButtonColor,
-            closeButtonTooltip: closeButtonTooltip);
+            closeButtonTooltip: closeButtonTooltip, customButton: customButton,);
       });
 }

@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       Image.network("https://picsum.photos/id/237/200/300")
                           .image,
-                      swipeDismissible: true);
+                      swipeDismissible: true, customButton: IconButton(onPressed: () {},icon: const Icon(Icons.download, color: Colors.white,)));
                 }),
             ElevatedButton(
                 child: const Text("Show Multiple Images (Simple)"),
